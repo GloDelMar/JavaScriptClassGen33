@@ -29,7 +29,14 @@ console.log("Ejercicio 2: "+ contaditos)
 
    //ejercicio 3
 
+function sabesContar(cuentaConmigo){
+    let total = cuentaConmigo.split(" ")
+    let contadas = total.length
+return contadas
+}
+let contaditas = sabesContar(phrase)
 
+console.log("Ejercicio 3: "+contaditas)
 
     //ejercicio 4
     function EmulsionDeScott(laFrase){
@@ -43,6 +50,13 @@ console.log("Ejercicio 4: "+crecidito)
 
    //ejercicio 5
 
-   function escrituraChavorruca(fr4se){
+   function textoChavorruco(EstaFrase, laQueSeVa, laUsurpadora) {
     
+    let elCambio = new RegExp(laQueSeVa, "gi");
+    
+    let conLaUsurpadora = EstaFrase.replace(elCambio, laUsurpadora);
+    return conLaUsurpadora;
    }
+  
+  console.log("Ejercicio 5: "+textoChavorruco(phrase, /[aá]/g, "4"));
+  

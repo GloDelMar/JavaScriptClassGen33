@@ -116,5 +116,47 @@ function getFemales (objetos){
   })}
        getFemales(users)
 
+//ejercicio 4
 
+const edadPromedioDeUsuarios= contar =>{
+  let edades = 0
+  let contador = 0
+contar.forEach((item) =>{
+     edades = edades + item.age
+     contador++
+})
+let promediado = edades/contador
+return promediado
+}
+let promedioEdad = edadPromedioDeUsuarios(users)
+console.log("La edad promedio es de " + promedioEdad)
 
+//ejercicio 5
+
+function elMasAnciano(sabiduria){
+  let elAncianoMayor = 0
+  sabiduria.forEach((item)=>{
+  if(item.age > elAncianoMayor){
+    elAncianoMayor = item.age
+  }
+    })
+   return elAncianoMayor 
+}
+let elMayor = elMasAnciano(users)
+
+console.log(elMayor)
+
+//ejercicio 6
+
+function elMasJoven(enPañales){
+  let elColagenoDeTodos = 99
+  enPañales.forEach((item)=>{
+  if(item.age < elColagenoDeTodos){
+    elColagenoDeTodos = item.age
+  }
+    })
+   return elColagenoDeTodos 
+}
+let elBebe = elMasJoven(users)
+
+console.log(elBebe)
