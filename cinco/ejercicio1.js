@@ -11,35 +11,69 @@ let phrase = "La mejor forma de predecir el futuro es creándolo"
 
 //Ejercicio 1
 // a)convertirlo en un array
-let arrayPhrase = phrase.split(" ")
+let palabraParaMedir = 3
 
-console.log(arrayPhrase)
-// b)usaer el índice para ubicar la segunda palabra e imprimir su lognitud
+function conteoDeLetras(laFrase) {
+let arrayPhrase = laFrase.split(" ")
 
-let longitudPalabra2 = arrayPhrase[1]
-
-console.log(longitudPalabra2.length)
-
+let longitudPalabra2 = arrayPhrase[palabraParaMedir]
+if (longitudPalabra2 == undefined){
+  return "Ese indice no es válido"
+}
+return longitudPalabra2.length
+}
+let totalLetras = conteoDeLetras(phrase)
+console.log(totalLetras)
 
 //Ejercicio 2
-// a) convertir en un array
-let arrayPhrase2 = phrase.split(" ")
+let indice = 5
 
-console.log(arrayPhrase2)
-// b) usar un método para eliminar una palabra seleccionandola con el índice
-let arrayPhraseCorta = arrayPhrase2.shift(0)
-// c) convertirla en string para imprimir el resultado
-let arrayfinal = arrayPhrase2.join(" ")
-console.log(arrayfinal)
+function eliminarPalabras(laFrase) {
+
+  let arrayPhrase2 = phrase.split(" ")
+ 
+   let laPalabra = arrayPhrase2[indice]
+
+  const arrayPhraseCortada = arrayPhrase2.filter(palabra => palabra != laPalabra)
+
+ return arrayPhraseCortada.join(" ");
+
+}
+  let cortadaLaFrase = eliminarPalabras(phrase)
+console.log (cortadaLaFrase)
 
 //Ejercicio 3
-//convertirlo en array
-// hacer que haga conteo de la longitud de cada palabra
-// que si es menor a 3 entonces la elimine
-// convertir a string e imprimir
+//convertirlo en array split
+// hacer que haga conteo de la longitud de cada palabra con un  for
+// que si es menor a 3 entonces la elimine con filter
+// convertir a string e imprimir join
+
+function eliminarLasCortas(unaPhrase){
+  let frase = unaPhrase.split(" ")
+  for(i=0; i < frase.length; i++){
+    if(frase[i].length <= 3){
+      frase = frase.filter(palabra => palabra !== frase[i])
+    }
+  }
+  return frase.join(" ")
+}
+
+let fraseMasCorta = eliminarLasCortas(phrase)
+console.log(fraseMasCorta)
+
 
 // Ejercicio 4 
 //convertir a array
 // usar método para invertir el orden
 // convertir a string e imprimir
 
+function deReversaMami(laConga){
+ let deReversa = laConga.split(" ")
+
+  nuevoOrden = deReversa.reverse()
+
+  return nuevoOrden.join(" ")
+}
+let esarhp = deReversaMami(phrase)
+
+console.log(esarhp)

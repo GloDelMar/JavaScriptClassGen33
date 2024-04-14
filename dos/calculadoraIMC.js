@@ -4,7 +4,7 @@ function calculoDeIMC(peso, altura){
 
 }
 
-const IMC=calculoDeIMC(45,"uno sesenta")
+const IMC=calculoDeIMC(75,1.65)
 
 if(isNaN(IMC)){
    console.log("¡ATENCIÓN! Alguno de tus parámetros no es válido para ejectuar el programa, intenta de nuevo.")
