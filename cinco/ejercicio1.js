@@ -70,9 +70,9 @@ console.log(fraseMasCorta)
 function deReversaMami(laConga){
  let deReversa = laConga.split(" ")
 
-  nuevoOrden = deReversa.reverse()
+  paraAtrasTrasTras = deReversa.reverse()
 
-  return nuevoOrden.join(" ")
+  return paraAtrasTrasTras.join(" ")
 }
 let esarhp = deReversaMami(phrase)
 
