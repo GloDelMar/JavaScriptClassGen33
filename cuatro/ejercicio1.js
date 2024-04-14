@@ -9,13 +9,40 @@ se requiere:
    
     const phrase = "La mejor forma de predecir el futuro es creándolo"
 
-    const upper = phrase.toUpperCase()
-let largo = phrase.length
+    //ejercicio 1
+function conteoDeCaracteres(paContar){
+    let contado = paContar.length
 
-console.log ("1.- " + largo)
-    console.log("4.- "+upper)
+    return contado
+}
+console.log("Ejercicio 1: "+conteoDeCaracteres(phrase))
 
-    let text1 = "      Hello World!      ";
-let text2 = text1.trim();
-console.log (text2)
+    //ejercicio 2
+   function juntitosPaContar(formaditos){
+        let encajados = phrase.split(" ")
+        let desencajados = encajados.join("")
+        let deUnoEnUno = desencajados.length
+       return deUnoEnUno
+   }
+let contaditos = juntitosPaContar(phrase)
+console.log("Ejercicio 2: "+ contaditos)
 
+   //ejercicio 3
+
+
+
+    //ejercicio 4
+    function EmulsionDeScott(laFrase){
+    const SimonDiceCrece = laFrase.toUpperCase()
+    return SimonDiceCrece
+}
+
+let crecidito = EmulsionDeScott(phrase)
+
+console.log("Ejercicio 4: "+crecidito)
+
+   //ejercicio 5
+
+   function escrituraChavorruca(fr4se){
+    
+   }

@@ -89,13 +89,13 @@ const users = [
 
       //ejercicio 1
 
-/*      function nombreyApellido (objetos) {
+   function nombreyApellido (objetos) {
                 for (i = 0; i <objetos.length; i++){
                    console.log(objetos[i].name + " " + objetos[i].lastname)
                                     }
                   }
 
-nombreyApellido(users) */
+nombreyApellido(users)
 
 //ejercicio 2
 function getFemales (objetos){
@@ -106,7 +106,15 @@ if (persones.gender == "Female"){
 })}
      getFemales(users)
 
+//ejercicio 3
 
+function getFemales (objetos){
+  objetos.forEach((persones) =>{
+  if (persones.gender == "Male"){
+    console.log(persones.name)
+   }
+  })}
+       getFemales(users)
 
 
 
