@@ -621,14 +621,60 @@ return accum[current.rating] ? {...accum, [current.rating]: accum[current.rating
 :  {...accum, [current.rating]: 1}},{})
 return resultado
 }
-console.log(organizarMoviesPorRating(movies))
-        
+
+let porRating= organizarMoviesPorRating(movies)
+
  // Ejercicio 11. Obtener la cantidad de películas de cada país, organizada de la siguiente forma:
      /*  {
            [pais]:[cantidad]
        }*/
+
+       const organizarMoviesPorPais= (dataArray) => {
+        let resultado = dataArray.reduce((accum, current) =>{
+      return accum[current.country] ? {...accum, [current.country]: accum[current.country]+1} 
+      :  {...accum, [current.country]: 1}},{})
+      return resultado
+      }
+
+      let porPais = organizarMoviesPorPais(movies)
+
+      // para gobernarlos a todos
+      const organizaByPropiedad = (dataArray, propertyName) => {
+        let result=dataArray.reduce((accum, current)=>{
+return accum[current[propertyName]]
+? {...accum, [current[propertyName]]: accum[current[propertyName]]+1}
+: {...accum, [current[propertyName]]: 1}
+        }, {})
+        return result
+      }
+
  //Ejercicio 12. Obtener la edad promedio de los actores protagonistas
+
+    const PromedioDeEdadesDeActores = (dataArray)=> {
+      let result = dataArray.reduce ((accum, current)=>{
+      let subResult = current.protagonists.reduce((accum,current, _, arr)=>{
+          return accum + current.age / arr.length
+        },0)
+        return subResult 
+      },0)
+      return result
+    }
+
+      let EdadesPromedioActores = PromedioDeEdadesDeActores(movies)
+
  //Ejercicio 13. Dado el nombre de un actor, obtener la cantidad de películas de la lista en las que aparece
+ 
+ const lasPeliculasDelActor = (dataArray, actorName) =>{
+  let result = dataArray.reduce((accum, current)=>{
+    return current.protagonists.some((actor)=> actor.name === actorName)
+    ? accum +1
+    :accum;
+  }, 0)
+  return result
+ }
+ 
+ let elActor = lasPeliculasDelActor(movies, "Ryan Gosling")
+ console.log(elActor)
  //ejercicio 14. Obtener una lista que contenga objetos de cada película con el siguiente formato:
    /*
    {
@@ -636,5 +682,7 @@ console.log(organizarMoviesPorRating(movies))
        trimmedSynopsis: "{sinopsis}..."
    }
 
-   **trimmedSynopsis debe estar limitada a 10 palabras, y debe tener puntos
+     **trimmedSynopsis debe estar limitada a 10 palabras, y debe tener puntos
     suspensivos al final.*/
+
+   
