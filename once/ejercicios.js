@@ -618,7 +618,8 @@ let sinOscares = ListapeliculasSinOscar(movies)
 const organizarMoviesPorRating = (dataArray) => {
   let resultado = dataArray.reduce((accum, current) =>{
 return accum[current.rating] ? {...accum, [current.rating]: accum[current.rating]+1} 
-:  {...accum, [current.rating]: 1}},[])
+:  {...accum, [current.rating]: 1}},{})
+return resultado
 }
 console.log(organizarMoviesPorRating(movies))
         
