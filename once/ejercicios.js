@@ -558,7 +558,7 @@ const laListadeProtagonistas = (listaPrevia) => {
 };
 let protagonistas= (PreviaProtagonistas(movies))
 
-//requiere corregir... ----->problemas aquí
+//requiere corregir... -----> ejercicio 3 sin resolver...
 
   //Ejercisio 4 Obtener uan lista de clasificaciones (rating) sin repetir
 
