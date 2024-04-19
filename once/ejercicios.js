@@ -557,6 +557,7 @@ const laListadeProtagonistas = (listaPrevia) => {
     return result;
 };
 let protagonistas= (PreviaProtagonistas(movies))
+console.log
 
 //requiere corregir... -----> ejercicio 3 sin resolver...
 
@@ -614,7 +615,12 @@ let sinOscares = ListapeliculasSinOscar(movies)
        Es decir, la propiedad del objeto resultante deber ser la clasificación, y
         el valor de esa propiedad debe ser la cantidad de películas que pertenecen 
         a esa clasificación*/
-
+const organizarMoviesPorRating = (dataArray) => {
+  let resultado = dataArray.reduce((accum, current) =>{
+return accum[current.rating] ? {...accum, [current.rating]: accum[current.rating]+1} 
+:  {...accum, [current.rating]: 1}},[])
+}
+console.log(organizarMoviesPorRating(movies))
         
  // Ejercicio 11. Obtener la cantidad de películas de cada país, organizada de la siguiente forma:
      /*  {
