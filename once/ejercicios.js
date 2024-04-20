@@ -685,4 +685,13 @@ return accum[current[propertyName]]
      **trimmedSynopsis debe estar limitada a 10 palabras, y debe tener puntos
     suspensivos al final.*/
 
-   
+    const getShortMoviesObject = (dataArray) => {
+      let result = dataArray.map((movie) => {
+        let { title, synopsis } = movie;
+        let trimmedSynopsis = `${synopsis.split(" ", 10).join(" ")}...`;
+        return { title, trimmedSynopsis };
+      });
+      return result;
+    };
+    
+    console.log(getShortMoviesObject(movies));
