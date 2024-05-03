@@ -11,13 +11,13 @@ const getKoders = async () => {
   
     let keys = Object.keys(koders);
     console.log(keys);
-    let values = Object.values(koders);
-    console.log(values);
-  
+   
+  //Aqui obtendremos el array listo para trabajar con él
     let kodersArray = keys.map((key) => {
       return { ...koders[key], key };
     });
     console.log(kodersArray);
+    printKoders(kodersArray, "koder-list")
   };
   
   const postKoder = async (koderObject) => {
@@ -32,6 +32,20 @@ const getKoders = async () => {
     console.log(data);
   };
   
-  getKoders();
+
   /*se engará de pedir información a la base de datos*/
   
+  let saveKoderBtn = document.getElementById(save-koder-btn)
+
+  saveKoderBtn.addEventListener("click", ()=>{
+    let inputs = document.querySelectorAll("koder-form unput")
+
+    let koderObject = {}
+
+    inputs.forEach(({name, value})=>{
+      koderObject[name] = value
+    })
+    console.log(koderObject)
+    postKoder(koderObject)
+    inputs.forEach((input)=> (input.value = ""))
+  })
